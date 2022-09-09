@@ -2,7 +2,7 @@ import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
 import { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Avatar from "./Avatar";
 import HeaderSeachPageOptions from "./HeaderSeachPageOptions";
 
@@ -18,6 +18,11 @@ const HeaderSearchResultPage: NextPage = () => {
 
     router.push(`/search?term=${term}`);
   };
+
+  useEffect(() => {
+    searchInputRef.current!.value = router.query.term as string;
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <header className="sticky top-0 bg-white">
