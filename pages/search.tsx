@@ -5,7 +5,6 @@ import React from "react";
 
 import HeaderSearchResultPage from "../components/HeaderSearchResultPage";
 import SearchResults from "../components/SearchResults";
-import { API_KEY, CONTEXT_KEY } from "../key";
 import response from "../response";
 
 interface SearchProps {
