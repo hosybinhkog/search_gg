@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { term } = context.query;
   const startIndex = context.query.start || "0";
 
-  const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${term}&start=${startIndex}`;
+  const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${term}&start=${startIndex}`;
 
   const data = useDummyData
     ? response
